@@ -1,0 +1,20 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
