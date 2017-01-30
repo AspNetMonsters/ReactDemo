@@ -21,7 +21,11 @@
     "Microsoft.Extensions.Logging.Console": "1.1.0",
     "Microsoft.Extensions.Logging.Debug": "1.1.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0"
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0",
+    "React.AspNet":"3.0.0",
+    "JavaScriptEngineSwitcher.ChakraCore":"2.3.0",
+    "JavaScriptEngineSwitcher.ChakraCore.Native.osx-x64":"2.3.0",
+    "JavaScriptEngineSwitcher.Jint": "2.3.0"
   },
 
   "tools": {

@@ -16,7 +16,6 @@ namespace react
                 .AddCommandLine(args)
                 .AddEnvironmentVariables(prefix: "ASPNETCORE_")
                 .Build();
-                Console.WriteLine("here");
             var host = new WebHostBuilder()
                 .UseUrls("http://*:5001")
                 .UseConfiguration(config)

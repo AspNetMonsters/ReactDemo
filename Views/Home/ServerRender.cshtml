@@ -1,7 +1,12 @@
 <div id="mountNode">
 
 </div>
+@Html.React("HelloMessage", new
+    {
+        name = "server side monster"
+    })
 <script src="https://unpkg.com/react@15/dist/react.js"></script>
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 <script src="~/js/Pages/Index.js"></script>
-<script>ReactDOM.render(React.createElement(HelloMessage, { name: "Monsters" }), mountNode);</script>
+@Html.ReactInitJavaScript()
+    

@@ -32,7 +32,12 @@ namespace react.Controllers
             return View();
         }
 
-         public IActionResult React()
+        public IActionResult React()
+        {
+            return View();
+        }
+
+        public IActionResult ServerRender()
         {
             return View();
         }

@@ -7,6 +7,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using React.AspNet;
+using JavaScriptEngineSwitcher.Core;
+using JavaScriptEngineSwitcher.ChakraCore;
+using JavaScriptEngineSwitcher.Jint;
 
 namespace react
 {
@@ -28,6 +33,8 @@ namespace react
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddReact();
             services.AddMvc();
         }
 
@@ -46,6 +53,19 @@ namespace react
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            var engineSwitcher = JsEngineSwitcher.Instance;
+            engineSwitcher.DefaultEngineName = "Jint";
+            engineSwitcher.EngineFactories
+                .AddJint()
+                .AddChakraCore();
+            Console.WriteLine("Engine " + String.Join(", ", engineSwitcher.EngineFactories.Select(x=>x.EngineName)));
+            // Initialise ReactJS.NET. Must be before static files.
+            app.UseReact(config =>
+            {
+                config.AddScript("~/js/remarkable.min.js");
+                config.AddScript("~/js/Pages/Index.js");
+            });
 
             app.UseStaticFiles();
 
